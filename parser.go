@@ -8,7 +8,7 @@ import (
 )
 
 func Parser() []string {  
-    data, err := ioutil.ReadFile("test.txt")
+    data, err := ioutil.ReadFile("passwords.txt")
     if err != nil {
         fmt.Println("File reading error", err)
         return nil

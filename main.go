@@ -17,8 +17,8 @@ func main() {
 	rawPassword := "taylormade"
 	hashedPasswordTest, _ := HashPassword(rawPassword)	
 	// Create X amount of workers
-	for i := 0; i < 100; i++ {
-		go Worker(passwordChannel, hashedPasswordTest, listenerChannel )
+	for i := 0; i < 10; i++ {
+		go Worker(passwordChannel, hashedPasswordTest, listenerChannel)
 	}
 
 	// Sends a password to the channel
@@ -27,23 +27,3 @@ func main() {
 	}
 	fmt.Println(<-listenerChannel)
 }
-
-
-
-// TO DO
-
-// Parse top password txt into an array
-// learn to export it.
-
-// Create worker function
-// worker function will take a password and compare hashed versions
-// go worker(channel) {
-// if true push to channel needs 1 buffer
-// }
-
-// Main function
-// Create a password Channel
-// For each password send it to the channel
-// For loop that will create X number of worker functions
-// Create a result Channel
-//
